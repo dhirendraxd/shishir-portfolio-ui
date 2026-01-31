@@ -1,54 +1,92 @@
-import { Mail, Linkedin, ExternalLink } from "lucide-react";
-
-const socialLinks = [
-  {
-    name: "Email",
-    icon: Mail,
-    href: "mailto:shishirjoshi65@gmail.com",
-    label: "shishirjoshi65@gmail.com"
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com/in/shishir-joshi",
-    label: "linkedin.com/in/shishir-joshi"
-  }
-];
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Implement form submission logic
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section id="contact" className="py-24 px-6 bg-foreground text-primary-foreground">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <p className="text-sm font-medium tracking-widest opacity-60 uppercase mb-4">
-          Get in Touch
-        </p>
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">
-          Let's Work Together
-        </h2>
-        <p className="text-primary-foreground/70 max-w-lg mx-auto mb-12">
-          I'm always open to discussing new projects, creative ideas, 
-          or opportunities to be part of your vision.
-        </p>
-
-        {/* Social links */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-3 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-full transition-colors group"
-            >
-              <link.icon className="w-5 h-5" />
-              <span className="text-sm font-medium">{link.name}</span>
-            </a>
-          ))}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-primary-foreground/70">
+            Have a question or want to work together? Drop me a message below.
+          </p>
         </div>
 
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name */}
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/40 transition-colors"
+            />
+          </div>
+
+          {/* Email */}
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/40 transition-colors"
+            />
+          </div>
+
+          {/* Message */}
+          <div>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows={5}
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 rounded-lg bg-primary-foreground/10 text-primary-foreground placeholder-primary-foreground/50 border border-primary-foreground/20 focus:outline-none focus:border-primary-foreground/40 transition-colors resize-none"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full px-6 py-3 bg-primary-foreground text-foreground font-medium rounded-lg hover:bg-primary-foreground/90 transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
+
         {/* Footer note */}
-        <p className="mt-16 text-sm text-primary-foreground/50">
+        <p className="mt-16 text-center text-sm text-primary-foreground/50">
           © 2024 Shishir Joshi. Designed with care.
         </p>
       </div>

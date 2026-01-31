@@ -1,43 +1,50 @@
-import aboutIllustration from "@/assets/about-illustration.jpg";
+import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 
 const About = () => {
-  return (
-    <section id="about" className="py-24 px-6 bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text content */}
-          <div className="space-y-6">
-            <p className="text-sm font-medium tracking-widest text-accent-foreground uppercase">
-              About Me
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Creative Designer & Researcher
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                I'm Shishir Joshi, a creative and detail-oriented Graphic Designer passionate about transforming ideas into visually impactful designs. I specialize in creating compelling visual content — from branding and social media graphics to posters, infographics, and digital illustrations.
-              </p>
-              <p>
-                With a strong background in research and a keen eye for design, I combine analytical thinking with creative problem-solving. I believe good design isn't just about aesthetics—it's about understanding context, audience, and purpose to create meaningful visual experiences.
-              </p>
-              <p>
-                Currently working as an Independent Researcher and Graphic Designer, I help students and professionals with customized study guides, research briefs, and visual design solutions. Every project is an opportunity to grow and refine my craft.
-              </p>
-            </div>
-          </div>
+  const socialLinks = [
+    { icon: Mail, href: "mailto:shishirjoshi65@gmail.com", label: "Email" },
+    { icon: Linkedin, href: "https://linkedin.com/in/shishir-joshi", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/shishir-joshi", label: "GitHub" },
+    { icon: Twitter, href: "https://twitter.com/shishir", label: "Twitter" },
+  ];
 
-          {/* Illustration */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={aboutIllustration} 
-                alt="Designer working at desk illustration" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/40 rounded-full blur-2xl" />
-          </div>
+  return (
+    <section id="about" className="py-24 px-6 bg-background">
+      <div className="max-w-4xl mx-auto text-center space-y-12">
+        {/* About title */}
+        <div>
+          <p className="text-sm font-medium tracking-widest text-foreground uppercase mb-4">
+            About Me
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Creative Designer & Researcher
+          </h2>
+        </div>
+
+        {/* Short bio */}
+        <div className="max-w-2xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            I'm a creative and detail-oriented Graphic Designer passionate about transforming ideas into visually impactful designs. I specialize in branding, social media graphics, posters, and digital illustrations.
+          </p>
+          <p>
+            With a strong background in research and design, I combine analytical thinking with creative problem-solving. Currently working as an Independent Researcher and Graphic Designer.
+          </p>
+        </div>
+
+        {/* Social media icons */}
+        <div className="flex justify-center gap-6">
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-[#1DA1F2] transition-all duration-300"
+              aria-label={link.label}
+            >
+              <link.icon className="w-6 h-6" />
+            </a>
+          ))}
         </div>
       </div>
     </section>
