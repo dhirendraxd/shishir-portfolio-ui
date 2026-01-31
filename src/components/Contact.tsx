@@ -24,7 +24,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-background">
+    <section id="contact" className="py-16 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[1.05fr_1.3fr] rounded-3xl overflow-hidden bg-white shadow-2xl">
           {/* Left visual panel */}
