@@ -49,23 +49,25 @@ const Education = () => {
 
                 {/* Content - minimal layout */}
                 <div>
-                  <div className="flex flex-col gap-2 mb-4">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {item.degree}
-                    </h3>
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-col gap-3 mb-4">
+                    <div className="flex items-start gap-4">
                       <img
                         src={item.logo}
                         alt={item.logoAlt}
-                        className="h-5 w-5 object-contain opacity-70"
+                        className="h-12 w-12 object-contain flex-shrink-0"
                       />
-                      <p className="text-sm text-muted-foreground">
-                        {item.institution}
-                      </p>
+                      <div>
+                        <h3 className="text-lg font-semibold text-foreground">
+                          {item.degree}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {item.institution}
+                        </p>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3 mb-2 pl-16">
                     <span className="text-xs font-medium text-foreground/60">{item.period}</span>
                     <span className={`text-xs font-medium px-2 py-1 rounded-full ${
                       item.status === "Ongoing" 
@@ -76,7 +78,7 @@ const Education = () => {
                     </span>
                   </div>
                   
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed pl-16">
                     {item.description}
                   </p>
                 </div>
