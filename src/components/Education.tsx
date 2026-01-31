@@ -24,60 +24,70 @@ const education = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-6">
+    <section id="education" className="py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-medium tracking-widest text-accent-foreground uppercase mb-4">
+        <div className="mb-16">
+          <p className="text-xs font-bold tracking-[0.35em] text-foreground/60 uppercase mb-3">
             Background
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Education
           </h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-6 top-0 h-full w-px bg-border" />
-          <div className="space-y-12">
+          {/* Vertical line */}
+          <div className="absolute left-0 top-8 h-[calc(100%-2rem)] w-px bg-border/50" />
+          
+          <div className="space-y-16">
             {education.map((item, index) => (
-              <div key={index} className="relative pl-16">
-                {/* Timeline node */}
-                <div className="absolute left-2.5 top-7 h-7 w-7 rounded-full border-2 border-accent bg-accent shadow-sm" />
+              <div key={index} className="relative pl-12">
+                {/* Timeline node - clean dot */}
+                <div className="absolute -left-2 top-2 h-4 w-4 rounded-full border-2 border-foreground/30 bg-background shadow-sm" />
 
-                {/* Card */}
-                <div className="flex flex-col sm:flex-row gap-6 pb-4">
-                  {/* Logo */}
-                  <div className="flex-shrink-0 w-20 h-20 rounded-3xl bg-accent/20 flex items-center justify-center overflow-hidden">
-                    <img
-                      src={item.logo}
-                      alt={item.logoAlt}
-                      className="w-14 h-14 object-contain"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <h3 className="text-xl font-semibold text-foreground">
-                        {item.degree}
-                      </h3>
-                      <span className={`px-2 py-0.5 text-xs rounded-full ${
-                        item.status === "Ongoing" 
-                          ? "bg-accent/30 text-accent-foreground" 
-                          : "bg-muted text-muted-foreground"
-                      }`}>
-                        {item.status}
-                      </span>
+                {/* Content - minimal layout */}
+                <div>
+                  <div className="flex flex-col gap-2 mb-4">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {item.degree}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <img
+                        src={item.logo}
+                        alt={item.logoAlt}
+                        className="h-5 w-5 object-contain opacity-70"
+                      />
+                      <p className="text-sm text-muted-foreground">
+                        {item.institution}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground text-base mb-2">
-                      {item.institution} • {item.period}
-                    </p>
-                    <p className="text-muted-foreground text-base">
-                      {item.description}
-                    </p>
                   </div>
+                  
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-xs font-medium text-foreground/60">{item.period}</span>
+                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${
+                      item.status === "Ongoing" 
+                        ? "bg-foreground/10 text-foreground/80" 
+                        : "bg-foreground/5 text-foreground/60"
+                    }`}>
+                      {item.status}
+                    </span>
+                  </div>
+                  
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
               </div>
             ))}
           </div>
