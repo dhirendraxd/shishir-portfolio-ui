@@ -3,19 +3,19 @@ import { GraduationCap, BookOpen } from "lucide-react";
 const education = [
   {
     icon: GraduationCap,
-    degree: "Bachelor's Degree in Information Management",
-    institution: "Trinity International College",
-    period: "2023 – Present",
+    degree: "Bachelor in Information Management",
+    institution: "KIST College of Management, Kamalpokhari, Kathmandu",
+    period: "2023 – 2027",
     status: "Ongoing",
     description: "Pursuing undergraduate studies with focus on design, development, and visual communication."
   },
   {
     icon: BookOpen,
-    degree: "+2, Biology/Biological Sciences, General",
-    institution: "KIST College & SS",
-    period: "Jan 2018 – Apr 2023",
+    degree: "High School",
+    institution: "Trinity International College, DilliBazar, Kathmandu",
+    period: "2022 – 2023",
     status: "Completed",
-    description: "Successfully completed higher secondary education with focus on biological sciences."
+    description: "Successfully completed high school education."
   }
 ];
 

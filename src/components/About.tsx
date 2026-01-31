@@ -3,9 +3,9 @@ import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 const About = () => {
   const socialLinks = [
     { icon: Mail, href: "mailto:shishirjoshi65@gmail.com", label: "Email" },
-    { icon: Linkedin, href: "https://linkedin.com/in/shishir-joshi", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/shishir-joshi-5948aa276/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/shishir-joshi", label: "GitHub" },
-    { icon: Twitter, href: "https://twitter.com/shishir", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/shishirjoshi65", label: "Twitter" },
   ];
 
   return (
