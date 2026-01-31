@@ -23,12 +23,12 @@ const Hero = () => {
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center flex-1">
         
         {/* Name - Very Large, Primary Focus - SINGLE LINE - BLACK COLOR */}
-        <h1 className="text-6xl md:text-7xl lg:text-9xl font-[900] tracking-tighter uppercase text-center leading-none mt-8 mb-14 md:mb-20 lg:mb-24 whitespace-nowrap" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
+        <h1 className="text-6xl md:text-6xl lg:text-8xl font-[900] tracking-tighter uppercase text-center leading-none mt-12 mb-14 md:mb-20 lg:mb-24 whitespace-nowrap" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
           Shishir Joshi
         </h1>
         
         {/* Work samples - GENEROUS SPACING & SIZE - PRIMARY VISUAL */}
-        <div className="relative flex items-center justify-center w-full max-w-6xl h-72 md:h-80 lg:h-[28rem] group/container mb-8 md:mb-10 lg:mb-12">
+        <div className="relative flex items-center justify-center w-full max-w-6xl h-72 md:h-80 lg:h-[28rem] group/container -mt-4 mb-8 md:mb-10 lg:mb-12">
           {workSamples.map((sample, index) => (
             <div
               key={index}
@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
 
         {/* Professional Titles - Very large, light gray, prominent - THICK FONT */}
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-[700] text-foreground/25 tracking-wide uppercase text-center leading-tight -mt-16" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+        <h2 className="text-5xl md:text-6xl lg:text-8xl font-[700] text-foreground/25 tracking-wide uppercase text-center leading-tight -mt-16" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
           Graphic Designer,
           <br />
           <span className="font-[800]" style={{ fontWeight: 800 }}>UI/UX & Researcher</span>
@@ -68,7 +68,7 @@ const Hero = () => {
       <div className="w-full text-center pb-4 mt-16">
         <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Clients</p>
         <p className="text-[11px] tracking-wider leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', color: '#6B7280' }}>
-          Independent Researcher • ChimpVine • Trinity International College • KIST College
+          ChimpVine
         </p>
       </div>
     </section>
