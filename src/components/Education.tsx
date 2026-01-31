@@ -27,7 +27,7 @@ const Education = () => {
     <section id="education" className="py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <p className="text-xs font-bold tracking-[0.35em] text-foreground/60 uppercase mb-3">
             Background
           </p>
