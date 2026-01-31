@@ -73,6 +73,7 @@ const Hero = () => {
               <img 
                 src={sample.src} 
                 alt={`Work sample ${index + 1}`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>

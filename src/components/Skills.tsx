@@ -30,14 +30,14 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 bg-secondary/30">
+    <section id="skills" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest text-accent-foreground uppercase mb-4">
             Capabilities
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Skills & Tools
           </h2>
         </div>
@@ -56,7 +56,7 @@ const Skills = () => {
                 {group.items.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-default"
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors cursor-default"
                   >
                     {skill}
                   </span>

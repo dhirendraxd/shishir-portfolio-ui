@@ -36,12 +36,6 @@ const projects = [
     title: "Creative Concept",
     description: "Creative concept and visual exploration",
     category: "Concept Art"
-  },
-  {
-    image: project4,
-    title: "Final Project",
-    description: "Completed project showcasing integrated design",
-    category: "Featured Work"
   }
 ];
 

@@ -6,7 +6,8 @@ const education = [
     logo: kistLogo,
     logoAlt: "KIST College of Management logo",
     degree: "Bachelor in Information Management",
-    institution: "KIST College of Management, Kamalpokhari, Kathmandu",
+    institution: "KIST College of Management",
+    location: "Kathmandu, Nepal",
     period: "2023 – 2027",
     status: "Ongoing",
     description: "Design-led management studies with a focus on UI/UX and research."
@@ -15,7 +16,8 @@ const education = [
     logo: trinityLogo,
     logoAlt: "Trinity International College logo",
     degree: "High School",
-    institution: "Trinity International College, DilliBazar, Kathmandu",
+    institution: "Trinity International College",
+    location: "Kathmandu, Nepal",
     period: "2022 – 2023",
     status: "Completed",
     description: "Completed higher secondary studies with strong academic performance."
@@ -24,7 +26,7 @@ const education = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-6 bg-secondary/30">
+    <section id="education" className="py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="mb-16 text-center">
@@ -54,28 +56,41 @@ const Education = () => {
                       <img
                         src={item.logo}
                         alt={item.logoAlt}
+                        loading="lazy"
                         className="h-12 w-12 object-contain flex-shrink-0"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-foreground">
+                        <h3 className="text-xl font-semibold text-foreground">
                           {item.degree}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {item.institution}
-                        </p>
+                        <div className="space-y-1">
+                          <p className="text-sm text-muted-foreground">
+                            {item.institution}
+                          </p>
+                          <p className="text-xs text-muted-foreground/70">
+                            {item.location}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-3 mb-2 pl-16">
+                  <div className="flex items-center gap-4 mb-2 pl-16">
                     <span className="text-xs font-medium text-foreground/60">{item.period}</span>
-                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${
-                      item.status === "Ongoing" 
-                        ? "bg-foreground/10 text-foreground/80" 
-                        : "bg-foreground/5 text-foreground/60"
-                    }`}>
-                      {item.status}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className={`inline-block h-2 w-2 rounded-full ${
+                        item.status === "Ongoing" 
+                          ? "bg-accent" 
+                          : "bg-foreground/30"
+                      }`} />
+                      <span className={`text-xs font-medium ${
+                        item.status === "Ongoing" 
+                          ? "text-accent" 
+                          : "text-foreground/50"
+                      }`}>
+                        {item.status}
+                      </span>
+                    </div>
                   </div>
                   
                   <p className="text-sm text-muted-foreground leading-relaxed pl-16">
