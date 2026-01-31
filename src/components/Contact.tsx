@@ -106,7 +106,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <p className="mt-12 text-center text-sm text-muted-foreground">
+        <p className="mt-20 text-center text-sm text-muted-foreground">
           Made by <a href="https://dhirendrasinghdhami.com.np/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Dhiren</a> at <a href="https://www.ctrlbits.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Ctrl Bits</a>
         </p>
       </div>
