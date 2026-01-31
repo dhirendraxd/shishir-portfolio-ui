@@ -5,10 +5,10 @@ import project4 from "@/assets/project-4.jpg";
 
 const Hero = () => {
   const workSamples = [
-    { src: project1, rotate: -15, xOffset: -100 },
-    { src: project2, rotate: -5, xOffset: -35 },
-    { src: project3, rotate: 5, xOffset: 35 },
-    { src: project4, rotate: 12, xOffset: 100 },
+    { src: project1, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '40%', left: '25%', rotate: -8 },
+    { src: project2, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '40%', rotate: 5 },
+    { src: project3, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '38%', left: '55%', rotate: -5 },
+    { src: project4, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '70%', rotate: 8 },
   ];
 
   return (
@@ -28,30 +28,23 @@ const Hero = () => {
         </h1>
         
         {/* Work samples - GENEROUS SPACING & SIZE - PRIMARY VISUAL */}
-        <div className="relative flex items-center justify-center w-full max-w-6xl h-72 md:h-80 lg:h-[28rem] group/container -mt-4 mb-8 md:mb-10 lg:mb-12">
+        <div className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-4 mb-8 md:mb-10 lg:mb-12" style={{ height: '450px' }}>
           {workSamples.map((sample, index) => (
             <div
               key={index}
-              className="absolute w-40 h-40 md:w-52 md:h-52 lg:w-72 lg:h-72 rounded-3xl overflow-hidden shadow-2xl 
-                         transition-all duration-500 ease-out cursor-pointer
-                         group-hover/container:rotate-0 group-hover/container:shadow-2xl
-                         hover:!scale-105 hover:!-translate-y-8 hover:!shadow-2xl hover:!z-50"
+              className={`absolute overflow-hidden shadow-2xl transition-all duration-500 ease-out ${sample.width} ${sample.shape === 'circle' ? 'rounded-full' : 'rounded-3xl'}`}
               style={{
-                transform: `translateX(${sample.xOffset}px) rotate(${sample.rotate}deg)`,
+                top: sample.top,
+                left: sample.left,
+                transform: `translate(-50%, -50%) rotate(${sample.rotate}deg)`,
                 zIndex: index + 1,
               }}
             >
-              <style>
-                {`.group\\/container:hover > div:nth-child(${index + 1}) {
-                  transform: translateX(${(index - 1.5) * 220}px) rotate(0deg) !important;
-                }`}
-              </style>
               <img 
                 src={sample.src} 
                 alt={`Work sample ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300" />
             </div>
           ))}
         </div>
