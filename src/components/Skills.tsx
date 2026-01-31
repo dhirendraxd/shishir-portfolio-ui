@@ -1,35 +1,24 @@
-const uiuxSkills = [
-  "Figma",
-  "Prototyping",
-  "Wireframing",
-  "UI/UX Design",
-  "Branding",
-  "Social Media Graphics",
-  "Poster Design",
-  "Digital Illustration"
-];
-
-const frontEndSkills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Front End Development",
-  "Web Design"
-];
-
-const digitalMarketingSkills = [
-  "SEO",
-  "Social Media Marketing",
-  "Content Strategy",
-  "Digital Marketing"
-];
-
-const otherSkills = [
-  "Research",
-  "Problem-solving",
-  "Communication",
-  "Leadership",
-  "Negotiation"
+const skillGroups = [
+  {
+    title: "UI/UX",
+    items: ["Figma", "Prototyping", "Wireframing", "User Flows"],
+  },
+  {
+    title: "Front-End",
+    items: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+  },
+  {
+    title: "Digital Marketing",
+    items: ["SEO", "Social Media Marketing", "Content Strategy"],
+  },
+  {
+    title: "Research",
+    items: ["User Research", "Market Research", "Insight Synthesis"],
+  },
+  {
+    title: "Soft Skills",
+    items: ["Problem-solving", "Communication", "Leadership", "Negotiation"],
+  },
 ];
 
 const Skills = () => {
@@ -46,78 +35,28 @@ const Skills = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* UI/UX skills */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full" />
-              UI/UX Design
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {uiuxSkills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {skillGroups.map((group, index) => (
+            <div
+              key={index}
+              className="pb-2"
+            >
+              <h3 className="text-xl font-semibold text-foreground mb-4 tracking-wide flex items-center gap-2">
+                <span className="w-2 h-2 bg-accent rounded-full" />
+                {group.title}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {group.items.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Front-End skills */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full" />
-              Front-End Dev
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {frontEndSkills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Digital Marketing skills */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full" />
-              Digital Marketing
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {digitalMarketingSkills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft Skills */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full" />
-              Soft Skills
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {otherSkills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
