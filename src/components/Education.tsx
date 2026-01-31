@@ -1,8 +1,10 @@
-import { GraduationCap, BookOpen } from "lucide-react";
+import kistLogo from "@/assets/kist-logo.jpg";
+import trinityLogo from "@/assets/trinity-logo.jpg";
 
 const education = [
   {
-    icon: GraduationCap,
+    logo: kistLogo,
+    logoAlt: "KIST College of Management logo",
     degree: "Bachelor in Information Management",
     institution: "KIST College of Management, Kamalpokhari, Kathmandu",
     period: "2023 – 2027",
@@ -10,7 +12,8 @@ const education = [
     description: "Pursuing undergraduate studies with focus on design, development, and visual communication."
   },
   {
-    icon: BookOpen,
+    logo: trinityLogo,
+    logoAlt: "Trinity International College logo",
     degree: "High School",
     institution: "Trinity International College, DilliBazar, Kathmandu",
     period: "2022 – 2023",
@@ -41,8 +44,12 @@ const Education = () => {
               className="relative flex gap-6 p-6 bg-card rounded-2xl border border-border hover:border-accent/50 transition-colors"
             >
               {/* Icon */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-accent-foreground" />
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center overflow-hidden">
+                <img
+                  src={item.logo}
+                  alt={item.logoAlt}
+                  className="w-10 h-10 object-contain"
+                />
               </div>
 
               {/* Content */}
