@@ -38,27 +38,27 @@ const Contact = () => {
             <div className="relative z-10">
               <p className="text-xs tracking-[0.4em] uppercase text-white/80">Best in</p>
               <h2 className="text-3xl sm:text-4xl font-semibold mt-3">UI/UX Design</h2>
-              <p className="text-white/80 mt-3">Let’s turn ideas into clean, high‑impact digital experiences.</p>
+              <p className="text-white/80 mt-3">Let's turn ideas into clean, high‑impact digital experiences.</p>
             </div>
             <div className="relative z-10">
-              <p className="text-white/70 text-sm">Let’s build something clean and impressive.</p>
+              <p className="text-white/70 text-sm">Let's build something clean and impressive.</p>
             </div>
           </div>
 
           {/* Right form panel */}
-          <div className="bg-[#F7F8FC] p-10 sm:p-12">
+          <div className="bg-accent/5 p-10 sm:p-12">
             <div className="mb-8">
-              <p className="text-sm text-muted-foreground">Step 1 of 1</p>
-              <div className="mt-2 h-1 w-full bg-muted rounded-full overflow-hidden">
+              <p className="text-sm text-accent font-medium">Step 1 of 1</p>
+              <div className="mt-2 h-1 w-full bg-accent/20 rounded-full overflow-hidden">
                 <div className="h-full w-full bg-accent" />
               </div>
               <h3 className="text-2xl font-semibold text-foreground mt-5">Contact Me</h3>
-              <p className="text-muted-foreground mt-2">Share your project details and I’ll respond quickly.</p>
+              <p className="text-muted-foreground mt-2">Share your project details and I'll respond quickly.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="text-sm text-foreground">Full Name</label>
+                <label className="text-sm text-foreground font-medium">Full Name</label>
                 <input
                   type="text"
                   name="name"
@@ -66,12 +66,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border-2 border-accent/20 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_rgba(29,161,242,0.1)]"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-foreground">Email</label>
+                <label className="text-sm text-foreground font-medium">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -79,12 +79,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border-2 border-accent/20 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_rgba(29,161,242,0.1)]"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-foreground">Message</label>
+                <label className="text-sm text-foreground font-medium">Message</label>
                 <textarea
                   name="message"
                   placeholder="Tell me about your project"
@@ -92,13 +92,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent resize-none"
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-white border-2 border-accent/20 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent focus:shadow-[0_0_0_3px_rgba(29,161,242,0.1)] resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-black text-white font-medium rounded-lg hover:bg-accent transition-colors"
+                className="w-full px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Continue
               </button>
