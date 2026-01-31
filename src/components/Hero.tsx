@@ -13,28 +13,27 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden">
-      {/* Location badge */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center">
-        <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase">Kathmandu, Nepal</p>
-        <p className="text-[10px] text-muted-foreground/60 tracking-wider mt-1">shishirjoshi65@gmail.com</p>
+      {/* Location badge - top */}
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 text-center">
+        <p className="text-xs font-bold tracking-[0.3em] text-foreground/70 uppercase">Kathmandu, Nepal</p>
       </div>
 
       {/* Main content */}
-      <div className="text-center w-full max-w-5xl mx-auto flex flex-col items-center">
-        {/* Name */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-foreground uppercase mb-12 animate-fade-in">
+      <div className="text-center w-full max-w-5xl mx-auto flex flex-col items-center gap-8">
+        {/* Name - Large heading */}
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-foreground uppercase">
           Shishir Joshi
         </h1>
         
-        {/* Work samples - overlapping cards with hover effects */}
-        <div className="relative flex items-center justify-center w-full h-44 md:h-56 lg:h-64 mb-16 group/container">
+        {/* Work samples - colorful cards with hover effects */}
+        <div className="relative flex items-center justify-center w-full h-48 md:h-56 lg:h-64 mb-4 group/container">
           {workSamples.map((sample, index) => (
             <div
               key={index}
-              className="absolute w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-2xl overflow-hidden shadow-lg 
+              className="absolute w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-2xl overflow-hidden shadow-xl 
                          transition-all duration-500 ease-out cursor-pointer
-                         group-hover/container:rotate-0 group-hover/container:shadow-xl
-                         hover:!scale-110 hover:!-translate-y-4 hover:!shadow-2xl hover:!z-50 group"
+                         group-hover/container:rotate-0 group-hover/container:shadow-2xl
+                         hover:!scale-110 hover:!-translate-y-6 hover:!shadow-2xl hover:!z-50 group"
               style={{
                 transform: `translateX(${sample.xOffset}px) rotate(${sample.rotate}deg)`,
                 zIndex: index + 1,
@@ -55,12 +54,22 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Title */}
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-muted-foreground/30 tracking-wide uppercase leading-[1.1]">
-          Visual DESIGNER
+        {/* Subtitle - Light gray, large text */}
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-muted-foreground/40 tracking-wider uppercase leading-tight">
+          Graphic Designer
           <br />
-          <span className="italic font-normal">& Researcher</span>
+          <span className="font-normal"> & Researcher</span>
         </h2>
+
+        {/* Email - bottom */}
+        <div className="mt-12">
+          <a 
+            href="mailto:shishirjoshi65@gmail.com"
+            className="text-xs font-medium tracking-widest text-foreground/60 uppercase hover:text-accent transition-colors"
+          >
+            shishirjoshi65@gmail.com
+          </a>
+        </div>
       </div>
     </section>
   );
