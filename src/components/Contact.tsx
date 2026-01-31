@@ -107,7 +107,7 @@ const Contact = () => {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          © 2024 Shishir Joshi. Designed with care.
+          Made by <a href="https://dhirendrasinghdhami.com.np/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Dhiren</a> at <a href="https://www.ctrlbits.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Ctrl Bits</a>
         </p>
       </div>
     </section>
