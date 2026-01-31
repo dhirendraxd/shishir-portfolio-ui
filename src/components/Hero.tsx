@@ -1,15 +1,45 @@
+import { useState, useEffect, useRef } from "react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
+import visual5 from "@/assets/visual-5.png";
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const workSamples = [
-    { src: project1, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '40%', left: '25%', rotate: -8 },
-    { src: project2, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '40%', rotate: 5 },
-    { src: project3, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '38%', left: '55%', rotate: -5 },
-    { src: project4, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '70%', rotate: 8 },
+    { src: project1, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '40%', left: '25%', rotate: -8, parallaxStrength: 0.8 },
+    { src: project2, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '40%', rotate: 5, parallaxStrength: 1.2 },
+    { src: visual5, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '38%', left: '55%', rotate: -5, parallaxStrength: 1.5 },
+    { src: project4, shape: 'box', width: 'w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72', top: '48%', left: '70%', rotate: 8, parallaxStrength: 0.9 },
   ];
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate offset from center (-1 to 1 range)
+        const offsetX = (x - centerX) / centerX;
+        const offsetY = (y - centerY) / centerY;
+        
+        // Map to subtle movement range (±15px)
+        setMousePosition({
+          x: offsetX * 15,
+          y: offsetY * 15,
+        });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-between px-8 md:px-16 lg:px-24 py-12 md:py-16 relative overflow-hidden bg-background">
@@ -28,15 +58,15 @@ const Hero = () => {
         </h1>
         
         {/* Work samples - GENEROUS SPACING & SIZE - PRIMARY VISUAL */}
-        <div className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-4 mb-8 md:mb-10 lg:mb-12" style={{ height: '450px' }}>
+        <div ref={containerRef} className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-4 mb-8 md:mb-10 lg:mb-12" style={{ height: '450px' }}>
           {workSamples.map((sample, index) => (
             <div
               key={index}
-              className={`absolute overflow-hidden shadow-2xl transition-all duration-500 ease-out ${sample.width} ${sample.shape === 'circle' ? 'rounded-full' : 'rounded-3xl'}`}
+              className={`absolute overflow-hidden shadow-2xl transition-transform duration-200 ease-out ${sample.width} ${sample.shape === 'circle' ? 'rounded-full' : 'rounded-3xl'}`}
               style={{
                 top: sample.top,
                 left: sample.left,
-                transform: `translate(-50%, -50%) rotate(${sample.rotate}deg)`,
+                transform: `translate(calc(-50% + ${mousePosition.x * sample.parallaxStrength}px), -50%) rotate(${sample.rotate}deg)`,
                 zIndex: index + 1,
               }}
             >

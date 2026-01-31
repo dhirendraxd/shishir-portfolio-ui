@@ -1,40 +1,47 @@
 import ProjectCard from "./ProjectCard";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import visual1 from "@/assets/visual-1.jpg";
+import visual2 from "@/assets/visual-2.jpg";
+import visual3 from "@/assets/visual-3.jpg";
+import visual4 from "@/assets/visual-4.png";
+import visual5 from "@/assets/visual-5.png";
 import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
 
 const projects = [
   {
-    image: project1,
-    title: "Shape Studies",
-    description: "Exploring geometric forms and color relationships",
-    category: "Visual Design"
+    image: visual1,
+    title: "Visual Design Exploration",
+    description: "Creative visual design exploration",
+    category: "Design"
   },
   {
-    image: project2,
-    title: "Brand Identity System",
-    description: "Complete visual identity for a local business",
-    category: "Branding"
+    image: visual2,
+    title: "Creative Composition",
+    description: "Artistic composition and visual storytelling",
+    category: "Art Direction"
   },
   {
-    image: project3,
-    title: "Editorial Layout",
-    description: "Magazine spread design and typography exploration",
-    category: "Print Design"
+    image: visual3,
+    title: "Design Study",
+    description: "In-depth design study and experimentation",
+    category: "Design"
+  },
+  {
+    image: visual4,
+    title: "Digital Design",
+    description: "Modern digital design composition",
+    category: "Digital Design"
+  },
+  {
+    image: visual5,
+    title: "Creative Concept",
+    description: "Creative concept and visual exploration",
+    category: "Concept Art"
   },
   {
     image: project4,
-    title: "Creative Poster Series",
-    description: "Playful typography and vibrant color compositions",
-    category: "Poster Design"
-  },
-  {
-    image: project5,
-    title: "Digital Experience",
-    description: "Mobile interface design with gradient aesthetics",
-    category: "UI Design"
+    title: "Final Project",
+    description: "Completed project showcasing integrated design",
+    category: "Featured Work"
   }
 ];
 
