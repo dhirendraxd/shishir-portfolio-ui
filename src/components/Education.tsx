@@ -43,7 +43,7 @@ const Education = () => {
             {education.map((item, index) => (
               <div key={index} className="relative pl-16">
                 {/* Timeline node */}
-                <div className="absolute left-2.5 top-7 h-7 w-7 rounded-full border-2 border-accent bg-background shadow-sm" />
+                <div className="absolute left-2.5 top-7 h-7 w-7 rounded-full border-2 border-accent bg-accent shadow-sm" />
 
                 {/* Card */}
                 <div className="flex flex-col sm:flex-row gap-6 pb-4">

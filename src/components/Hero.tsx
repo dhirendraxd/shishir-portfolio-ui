@@ -45,8 +45,8 @@ const Hero = () => {
     <section className="min-h-screen flex flex-col items-center justify-between px-8 md:px-16 lg:px-24 py-12 md:py-16 relative overflow-hidden bg-background">
       {/* Location & Email - Top center with spacing */}
       <div className="w-full text-center space-y-1 -mt-4 mb-0">
-        <p className="text-[9px] font-bold tracking-[0.35em] text-foreground uppercase cursor-pointer transition-colors duration-300 hover:text-[#1DA1F2]" style={{ fontFamily: 'Inter, sans-serif' }}>Kathmandu, Nepal</p>
-        <a href="mailto:shishirjoshi65@gmail.com" className="text-[9px] font-medium tracking-wider cursor-pointer transition-colors duration-300 hover:text-[#1DA1F2] block" style={{ fontFamily: 'Inter, sans-serif', color: '#6B7280' }}>shishirjoshi65@gmail.com</a>
+        <p className="text-[9px] font-bold tracking-[0.35em] text-foreground uppercase cursor-pointer transition-colors duration-300 hover:text-accent" style={{ fontFamily: 'Inter, sans-serif' }}>Kathmandu, Nepal</p>
+        <a href="mailto:shishirjoshi65@gmail.com" className="text-[9px] font-medium tracking-wider cursor-pointer transition-colors duration-300 hover:text-accent block" style={{ fontFamily: 'Inter, sans-serif', color: '#6B7280' }}>shishirjoshi65@gmail.com</a>
       </div>
 
       {/* Main centered content - Full width */}

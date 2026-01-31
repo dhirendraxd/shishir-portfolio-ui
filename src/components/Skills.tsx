@@ -1,22 +1,29 @@
+import { Code, Megaphone, PenTool, Search, Users } from "lucide-react";
+
 const skillGroups = [
   {
     title: "UI/UX",
+    icon: PenTool,
     items: ["Figma", "Prototyping", "Wireframing", "User Flows"],
   },
   {
     title: "Front-End",
+    icon: Code,
     items: ["HTML", "CSS", "JavaScript", "Responsive Design"],
   },
   {
     title: "Digital Marketing",
+    icon: Megaphone,
     items: ["SEO", "Social Media Marketing", "Content Strategy"],
   },
   {
     title: "Research",
+    icon: Search,
     items: ["User Research", "Market Research", "Insight Synthesis"],
   },
   {
     title: "Soft Skills",
+    icon: Users,
     items: ["Problem-solving", "Communication", "Leadership", "Negotiation"],
   },
 ];
@@ -42,7 +49,7 @@ const Skills = () => {
               className="pb-2"
             >
               <h3 className="text-xl font-semibold text-foreground mb-4 tracking-wide flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent rounded-full" />
+                <group.icon className="w-5 h-5 text-foreground/70" />
                 {group.title}
               </h3>
               <div className="flex flex-wrap gap-3">

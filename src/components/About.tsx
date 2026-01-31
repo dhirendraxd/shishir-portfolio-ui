@@ -39,7 +39,7 @@ const About = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-foreground/10 text-foreground hover:bg-foreground/20 hover:text-[#1DA1F2] transition-all duration-300"
+              className="p-3 rounded-full bg-accent/10 text-foreground hover:bg-accent/20 hover:text-accent transition-all duration-300"
               aria-label={link.label}
             >
               <link.icon className="w-6 h-6" />
