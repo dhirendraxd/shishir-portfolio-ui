@@ -11,23 +11,17 @@ const About = () => {
               About Me
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Learning, Growing, Creating
+              Creative Designer & Researcher
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm an early-career graphic designer with 6–8 months of hands-on experience 
-                in visual design. My journey began with a deep curiosity for how visuals 
-                communicate ideas and emotions.
+                I'm Shishir Joshi, a creative and detail-oriented Graphic Designer passionate about transforming ideas into visually impactful designs. I specialize in creating compelling visual content — from branding and social media graphics to posters, infographics, and digital illustrations.
               </p>
               <p>
-                Alongside design, I've worked as a researcher, which has shaped my 
-                analytical approach to creative problems. I believe good design isn't 
-                just about aesthetics—it's about understanding context, audience, and purpose.
+                With a strong background in research and a keen eye for design, I combine analytical thinking with creative problem-solving. I believe good design isn't just about aesthetics—it's about understanding context, audience, and purpose to create meaningful visual experiences.
               </p>
               <p>
-                Currently pursuing my bachelor's degree, I'm constantly learning and 
-                experimenting with new techniques and ideas. Every project is an 
-                opportunity to grow and refine my craft.
+                Currently working as an Independent Researcher and Graphic Designer, I help students and professionals with customized study guides, research briefs, and visual design solutions. Every project is an opportunity to grow and refine my craft.
               </p>
             </div>
           </div>

@@ -4,20 +4,14 @@ const socialLinks = [
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:hello@yourname.com",
-    label: "hello@yourname.com"
+    href: "mailto:shishirjoshi65@gmail.com",
+    label: "shishirjoshi65@gmail.com"
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourprofile",
-    label: "linkedin.com/in/yourprofile"
-  },
-  {
-    name: "Behance",
-    icon: ExternalLink,
-    href: "https://behance.net/yourprofile",
-    label: "behance.net/yourprofile"
+    href: "https://linkedin.com/in/shishir-joshi",
+    label: "linkedin.com/in/shishir-joshi"
   }
 ];
 
@@ -55,7 +49,7 @@ const Contact = () => {
 
         {/* Footer note */}
         <p className="mt-16 text-sm text-primary-foreground/50">
-          © 2024 Your Name. Designed with care.
+          © 2024 Shishir Joshi. Designed with care.
         </p>
       </div>
     </section>

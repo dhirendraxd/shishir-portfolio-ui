@@ -1,21 +1,21 @@
 const designSkills = [
-  "Adobe Photoshop",
-  "Adobe Illustrator",
-  "Figma",
-  "Typography",
-  "Color Theory",
-  "Layout Design",
-  "Visual Hierarchy",
-  "Brand Identity"
+  "Photoshop",
+  "Photography",
+  "Technical Drawing",
+  "UI/UX Design",
+  "Branding",
+  "Social Media Graphics",
+  "Poster Design",
+  "Digital Illustration"
 ];
 
 const researchSkills = [
-  "User Research",
-  "Data Analysis",
+  "Research",
+  "Front End Development",
   "Academic Writing",
-  "Literature Review",
-  "Critical Thinking",
-  "Problem Solving"
+  "Critical Analysis",
+  "Problem Solving",
+  "Visual Communication"
 ];
 
 const Skills = () => {

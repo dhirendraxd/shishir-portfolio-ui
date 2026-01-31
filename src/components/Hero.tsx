@@ -15,15 +15,15 @@ const Hero = () => {
     <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden">
       {/* Location badge */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center">
-        <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase">INDIA</p>
-        <p className="text-[10px] text-muted-foreground/60 tracking-wider mt-1">hello@yourname.com</p>
+        <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase">Kathmandu, Nepal</p>
+        <p className="text-[10px] text-muted-foreground/60 tracking-wider mt-1">shishirjoshi65@gmail.com</p>
       </div>
 
       {/* Main content */}
       <div className="text-center w-full max-w-5xl mx-auto flex flex-col items-center">
         {/* Name */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-foreground uppercase mb-12 animate-fade-in">
-          YOUR NAME
+          Shishir Joshi
         </h1>
         
         {/* Work samples - overlapping cards with hover effects */}
@@ -57,9 +57,9 @@ const Hero = () => {
 
         {/* Title */}
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-muted-foreground/30 tracking-wide uppercase leading-[1.1]">
-          GRAPHIC DESIGNER,
+          Visual DESIGNER
           <br />
-          <span className="italic font-normal">Researcher</span>
+          <span className="italic font-normal">& Researcher</span>
         </h2>
       </div>
     </section>

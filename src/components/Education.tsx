@@ -3,19 +3,19 @@ import { GraduationCap, BookOpen } from "lucide-react";
 const education = [
   {
     icon: GraduationCap,
-    degree: "Bachelor's Degree",
-    institution: "University Name",
+    degree: "Bachelor's Degree in Information Management",
+    institution: "Trinity International College",
     period: "2023 – Present",
     status: "Ongoing",
-    description: "Pursuing undergraduate studies with focus on design and visual communication."
+    description: "Pursuing undergraduate studies with focus on design, development, and visual communication."
   },
   {
     icon: BookOpen,
-    degree: "Higher Secondary (12th Grade)",
-    institution: "School Name",
-    period: "2021 – 2023",
+    degree: "+2, Biology/Biological Sciences, General",
+    institution: "KIST College & SS",
+    period: "Jan 2018 – Apr 2023",
     status: "Completed",
-    description: "Successfully completed higher secondary education."
+    description: "Successfully completed higher secondary education with focus on biological sciences."
   }
 ];
 
