@@ -1,7 +1,7 @@
-const designSkills = [
-  "Photoshop",
-  "Photography",
-  "Technical Drawing",
+const uiuxSkills = [
+  "Figma",
+  "Prototyping",
+  "Wireframing",
   "UI/UX Design",
   "Branding",
   "Social Media Graphics",
@@ -9,13 +9,27 @@ const designSkills = [
   "Digital Illustration"
 ];
 
-const researchSkills = [
-  "Research",
+const frontEndSkills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
   "Front End Development",
-  "Academic Writing",
-  "Critical Analysis",
-  "Problem Solving",
-  "Visual Communication"
+  "Web Design"
+];
+
+const digitalMarketingSkills = [
+  "SEO",
+  "Social Media Marketing",
+  "Content Strategy",
+  "Digital Marketing"
+];
+
+const otherSkills = [
+  "Research",
+  "Problem-solving",
+  "Communication",
+  "Leadership",
+  "Negotiation"
 ];
 
 const Skills = () => {
@@ -32,18 +46,18 @@ const Skills = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Design skills */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* UI/UX skills */}
           <div>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
-              Design
+              UI/UX Design
             </h3>
             <div className="flex flex-wrap gap-3">
-              {designSkills.map((skill, index) => (
+              {uiuxSkills.map((skill, index) => (
                 <span 
                   key={index}
-                  className="px-4 py-2 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
+                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
@@ -51,17 +65,53 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Research skills */}
+          {/* Front-End skills */}
           <div>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
-              Research
+              Front-End Dev
             </h3>
             <div className="flex flex-wrap gap-3">
-              {researchSkills.map((skill, index) => (
+              {frontEndSkills.map((skill, index) => (
                 <span 
                   key={index}
-                  className="px-4 py-2 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
+                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Digital Marketing skills */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 bg-accent rounded-full" />
+              Digital Marketing
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {digitalMarketingSkills.map((skill, index) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 bg-accent rounded-full" />
+              Soft Skills
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {otherSkills.map((skill, index) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-foreground hover:border-accent hover:bg-accent/10 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
