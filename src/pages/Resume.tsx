@@ -1,5 +1,8 @@
-import { ArrowLeft, Mail, Phone, MapPin, Briefcase, GraduationCap, Award, Code } from "lucide-react";
+import { ArrowLeft, Mail, Phone, MapPin, Briefcase, GraduationCap, Award, Code, Linkedin, Github, Twitter } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { SOCIAL_LINKS } from "../lib/constants";
+import kistLogo from "../assets/kist-logo.jpg";
+import trinityLogo from "../assets/trinity-logo.jpg";
 
 const Resume = () => {
   const navigate = useNavigate();
@@ -34,15 +37,19 @@ const Resume = () => {
       degree: "Bachelor in Information Management",
       institution: "KIST College of Management",
       location: "Kathmandu, Nepal",
-      period: "2023 - 2027",
-      status: "Ongoing"
+      period: "2023 – 2027",
+      status: "Ongoing",
+      logo: kistLogo,
+      description: "Design-led management studies with a focus on UI/UX and research."
     },
     {
       degree: "High School",
       institution: "Trinity International College",
       location: "Kathmandu, Nepal",
-      period: "2022 - 2023",
-      status: "Completed"
+      period: "2022 – 2023",
+      status: "Completed",
+      logo: trinityLogo,
+      description: "Completed higher secondary studies with strong academic performance."
     }
   ];
 
@@ -96,15 +103,33 @@ const Resume = () => {
           </div>
         </div>
 
-        {/* Professional Summary */}
+        {/* Connect */}
         <div className="bg-white rounded-2xl p-8 shadow-md mb-8">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Professional Summary</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Creative and detail-oriented Visual Designer with expertise in UI/UX design, branding, and digital marketing. 
-            Passionate about creating user-friendly interfaces that are both functional and visually compelling. 
-            Currently pursuing a Bachelor's degree in Information Management while actively working on freelance projects. 
-            Strong background in research and design thinking, combining analytical skills with creative problem-solving.
-          </p>
+          <h3 className="text-2xl font-bold text-foreground mb-6">Connect</h3>
+          <div className="flex flex-wrap gap-4">
+            {SOCIAL_LINKS.map((social, index) => {
+              const getIcon = () => {
+                if (social.label === "LinkedIn") return <Linkedin className="w-5 h-5" />;
+                if (social.label === "GitHub") return <Github className="w-5 h-5" />;
+                if (social.label === "Twitter") return <Twitter className="w-5 h-5" />;
+                if (social.label === "Email") return <Mail className="w-5 h-5" />;
+                return null;
+              };
+
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  target={social.label !== "Email" ? "_blank" : undefined}
+                  rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#6B8E23]/10 text-[#6B8E23] rounded-lg font-medium hover:bg-[#6B8E23] hover:text-white transition-colors"
+                >
+                  {getIcon()}
+                  {social.label}
+                </a>
+              );
+            })}
+          </div>
         </div>
 
         {/* Experience */}
@@ -145,14 +170,21 @@ const Resume = () => {
           </div>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <div key={index} className="border-l-2 border-[#6B8E23] pl-6">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                  <div>
-                    <h4 className="text-xl font-semibold text-foreground">{edu.degree}</h4>
-                    <p className="text-muted-foreground">{edu.institution}</p>
-                    <p className="text-sm text-muted-foreground/70">{edu.location}</p>
+              <div key={index}>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <img
+                      src={edu.logo}
+                      alt={edu.institution}
+                      className="h-12 w-12 rounded-lg object-cover"
+                    />
+                    <div>
+                      <h4 className="text-xl font-semibold text-foreground">{edu.degree}</h4>
+                      <p className="text-muted-foreground">{edu.institution}</p>
+                      <p className="text-sm text-muted-foreground/70">{edu.location}</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 mt-1 md:mt-0">
+                  <div className="flex items-center gap-2">
                     <span className="text-sm text-muted-foreground">{edu.period}</span>
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       edu.status === "Ongoing" ? "bg-[#6B8E23]/10 text-[#6B8E23]" : "bg-gray-100 text-gray-600"
@@ -161,13 +193,50 @@ const Resume = () => {
                     </span>
                   </div>
                 </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mt-3 ml-16">
+                  {edu.description}
+                </p>
+                {index < education.length - 1 && (
+                  <div className="border-t border-gray-200 mt-6 pt-6" />
+                )}
               </div>
             ))}
           </div>
         </div>
 
+        {/* Social */}
+        <div className="bg-white rounded-2xl p-8 shadow-md mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <h3 className="text-2xl font-bold text-foreground">Social</h3>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            {SOCIAL_LINKS.map((social, index) => {
+              const getIcon = () => {
+                if (social.label === "LinkedIn") return <Linkedin className="w-5 h-5" />;
+                if (social.label === "GitHub") return <Github className="w-5 h-5" />;
+                if (social.label === "Twitter") return <Twitter className="w-5 h-5" />;
+                if (social.label === "Email") return <Mail className="w-5 h-5" />;
+                return null;
+              };
+
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  target={social.label !== "Email" ? "_blank" : undefined}
+                  rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#6B8E23]/10 text-[#6B8E23] rounded-lg font-medium hover:bg-[#6B8E23] hover:text-white transition-colors"
+                >
+                  {getIcon()}
+                  {social.label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Skills */}
-        <div className="bg-white rounded-2xl p-8 shadow-md">
+        <div className="bg-white rounded-2xl p-8 shadow-md mb-8">
           <div className="flex items-center gap-3 mb-6">
             <Code className="w-6 h-6 text-[#6B8E23]" />
             <h3 className="text-2xl font-bold text-foreground">Skills & Expertise</h3>

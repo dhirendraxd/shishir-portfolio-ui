@@ -1,12 +1,14 @@
 import ProjectCard from "./ProjectCard";
-import visual1 from "@/assets/visual-1.jpg";
-import visual2 from "@/assets/visual-2.jpg";
-import visual3 from "@/assets/visual-3.jpg";
-import visual4 from "@/assets/visual-4.png";
-import visual5 from "@/assets/visual-5.png";
-import project4 from "@/assets/project-4.jpg";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import visual1 from "../assets/visual-1.jpg";
+import visual2 from "../assets/visual-2.jpg";
+import visual3 from "../assets/visual-3.jpg";
+import visual4 from "../assets/visual-4.png";
+import visual5 from "../assets/visual-5.png";
+import project4 from "../assets/project-4.jpg";
 
-const projects = [
+export const allProjects = [
   {
     image: visual1,
     title: "Visual Design Exploration",
@@ -36,10 +38,19 @@ const projects = [
     title: "Creative Concept",
     description: "Creative concept and visual exploration",
     category: "Concept Art"
+  },
+  {
+    image: project4,
+    title: "Project Four",
+    description: "Professional project work",
+    category: "Project"
   }
 ];
 
 const Work = () => {
+  const navigate = useNavigate();
+  const projects = allProjects.slice(0, 3); // Show first 3 projects
+
   return (
     <section id="work" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -58,10 +69,21 @@ const Work = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => navigate('/projects')}
+            className="inline-flex items-center gap-2 text-[#FF8C42] font-semibold hover:gap-3 transition-all duration-300 group"
+          >
+            View More Projects
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>

@@ -1,30 +1,57 @@
-import { Code, Megaphone, PenTool, Search, Users } from "lucide-react";
-
-const skillGroups = [
-  {
-    title: "UI/UX",
-    icon: PenTool,
-    items: ["Figma", "Prototyping", "Wireframing", "User Flows"],
+const tools = [
+  { 
+    name: "Figma", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg",
+    color: "#F24E1E",
+    size: "large" 
   },
-  {
-    title: "Front-End",
-    icon: Code,
-    items: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+  { 
+    name: "Notion", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg",
+    color: "#000000",
+    size: "small" 
   },
-  {
-    title: "Digital Marketing",
-    icon: Megaphone,
-    items: ["SEO", "Social Media Marketing", "Content Strategy"],
+  { 
+    name: "Illustrator", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeillustrator.svg",
+    color: "#FF9A00",
+    size: "small" 
   },
-  {
-    title: "Research",
-    icon: Search,
-    items: ["User Research", "Market Research", "Insight Synthesis"],
+  { 
+    name: "Miro", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/miro.svg",
+    color: "#FFD02F",
+    size: "small" 
   },
-  {
-    title: "Soft Skills",
-    icon: Users,
-    items: ["Problem-solving", "Communication", "Leadership", "Negotiation"],
+  { 
+    name: "Adobe XD", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobexd.svg",
+    color: "#FF61F6",
+    size: "small" 
+  },
+  { 
+    name: "After Effects", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeaftereffects.svg",
+    color: "#9999FF",
+    size: "small" 
+  },
+  { 
+    name: "Photoshop", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobephotoshop.svg",
+    color: "#31A8FF",
+    size: "small" 
+  },
+  { 
+    name: "Slack", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg",
+    color: "#4A154B",
+    size: "small" 
+  },
+  { 
+    name: "ChatGPT", 
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg",
+    color: "#10A37F",
+    size: "large" 
   },
 ];
 
@@ -33,35 +60,47 @@ const Skills = () => {
     <section id="skills" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-medium tracking-widest text-accent-foreground uppercase mb-4">
+        <div className="mb-16 text-center">
+          <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">
             Capabilities
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Skills & Tools
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">
+            Tools & Technologies
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {skillGroups.map((group, index) => (
+        {/* Tools Grid - Clean Icons */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+          {tools.map((tool, index) => (
             <div
               key={index}
-              className="pb-2"
+              className={`flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300 ${
+                tool.size === "large" ? "md:col-span-2 md:row-span-2" : ""
+              }`}
             >
-              <h3 className="text-xl font-semibold text-foreground mb-4 tracking-wide flex items-center gap-2">
-                <group.icon className="w-5 h-5 text-foreground/70" />
-                {group.title}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {group.items.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="text-base text-muted-foreground hover:text-foreground transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div
+                className={`${
+                  tool.size === "large"
+                    ? "w-32 h-32 md:w-40 md:h-40"
+                    : "w-20 h-20 md:w-24 md:h-24"
+                } group-hover:scale-110 transition-transform duration-300 mb-4 flex items-center justify-center`}
+              >
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="w-full h-full object-contain"
+                  style={{ 
+                    filter: `brightness(0) saturate(100%)`,
+                    WebkitMaskImage: `url(${tool.icon})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskSize: 'contain',
+                    backgroundColor: tool.color
+                  }}
+                />
               </div>
+              <h3 className="text-sm md:text-base font-medium text-foreground/70 group-hover:text-foreground transition-colors">
+                {tool.name}
+              </h3>
             </div>
           ))}
         </div>

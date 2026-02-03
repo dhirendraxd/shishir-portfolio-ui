@@ -1,28 +1,4 @@
-import kistLogo from "@/assets/kist-logo.jpg";
-import trinityLogo from "@/assets/trinity-logo.jpg";
-
-const education = [
-  {
-    logo: kistLogo,
-    logoAlt: "KIST College of Management logo",
-    degree: "Bachelor in Information Management",
-    institution: "KIST College of Management",
-    location: "Kathmandu, Nepal",
-    period: "2023 – 2027",
-    status: "Ongoing",
-    description: "Design-led management studies with a focus on UI/UX and research."
-  },
-  {
-    logo: trinityLogo,
-    logoAlt: "Trinity International College logo",
-    degree: "High School",
-    institution: "Trinity International College",
-    location: "Kathmandu, Nepal",
-    period: "2022 – 2023",
-    status: "Completed",
-    description: "Completed higher secondary studies with strong academic performance."
-  }
-];
+import { SOCIAL_LINKS } from "../lib/constants";
 
 const Education = () => {
   return (
@@ -31,75 +7,71 @@ const Education = () => {
         {/* Section header */}
         <div className="mb-16 text-center">
           <p className="text-xs font-bold tracking-[0.35em] text-foreground/60 uppercase mb-3">
-            Background
+            Connect
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Education
+            Social
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 top-8 h-[calc(100%-2rem)] w-px bg-border/50" />
-          
-          <div className="space-y-16">
-            {education.map((item, index) => (
-              <div key={index} className="relative pl-12">
-                {/* Timeline node - clean dot */}
-                <div className="absolute -left-2 top-2 h-4 w-4 rounded-full border-2 border-foreground/30 bg-background shadow-sm" />
+        <div className="flex flex-wrap justify-center gap-8">
+          {SOCIAL_LINKS.map((social, index) => {
+            const getIcon = () => {
+              if (social.label === "LinkedIn") return {
+                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg",
+                color: "#0A66C2"
+              };
+              if (social.label === "GitHub") return {
+                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg",
+                color: "#181717"
+              };
+              if (social.label === "Twitter") return {
+                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg",
+                color: "#000000"
+              };
+              if (social.label === "Email") return {
+                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg",
+                color: "#EA4335"
+              };
+              return null;
+            };
 
-                {/* Content - minimal layout */}
-                <div>
-                  <div className="flex flex-col gap-3 mb-4">
-                    <div className="flex items-start gap-4">
-                      <img
-                        src={item.logo}
-                        alt={item.logoAlt}
-                        loading="lazy"
-                        className="h-12 w-12 object-contain flex-shrink-0"
-                      />
-                      <div>
-                        <h3 className="text-xl font-semibold text-foreground">
-                          {item.degree}
-                        </h3>
-                        <div className="space-y-1">
-                          <p className="text-sm text-muted-foreground">
-                            {item.institution}
-                          </p>
-                          <p className="text-xs text-muted-foreground/70">
-                            {item.location}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 mb-2 pl-16">
-                    <span className="text-xs font-medium text-foreground/60">{item.period}</span>
-                    <div className="flex items-center gap-2">
-                      <span className={`inline-block h-2 w-2 rounded-full ${
-                        item.status === "Ongoing" 
-                          ? "bg-accent" 
-                          : "bg-foreground/30"
-                      }`} />
-                      <span className={`text-xs font-medium ${
-                        item.status === "Ongoing" 
-                          ? "text-accent" 
-                          : "text-foreground/50"
-                      }`}>
-                        {item.status}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed pl-16">
-                    {item.description}
-                  </p>
+            const icon = getIcon();
+
+            return (
+              <a
+                key={index}
+                href={social.href}
+                target={social.label !== "Email" ? "_blank" : undefined}
+                rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
+                className="relative group"
+              >
+                <div 
+                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
+                  style={{ 
+                    backgroundColor: icon.color + '15',
+                    padding: '1.25rem'
+                  }}
+                >
+                  <img 
+                    src={icon.url} 
+                    alt={social.label} 
+                    className="w-full h-full object-contain"
+                    style={{ 
+                      filter: `brightness(0) saturate(100%)`,
+                      WebkitMaskImage: `url(${icon.url})`,
+                      WebkitMaskRepeat: 'no-repeat',
+                      WebkitMaskSize: 'contain',
+                      backgroundColor: icon.color
+                    }}
+                  />
                 </div>
-              </div>
-            ))}
-          </div>
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm font-medium text-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  {social.label}
+                </span>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
