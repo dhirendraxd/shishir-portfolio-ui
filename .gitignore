@@ -103,3 +103,13 @@ Desktop.ini
 # Development servers
 .envrc
 .tool-versions
+# SEO & Documentation (Keep Local - Don't Push to GitHub)
+SEO_*.md
+SEO_*.txt
+QUICK_START.md
+START_HERE.md
+LOCAL_GEO_SEO_GUIDE.md
+DEPLOYMENT_SEO_GUIDE.sh
+IMPLEMENTATION_COMPLETE.md
+IMPLEMENTATION_COMPLETE.txt
+SEO_IMPLEMENTATION_COMPLETE.txt

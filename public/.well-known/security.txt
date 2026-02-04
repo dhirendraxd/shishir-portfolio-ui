@@ -1,0 +1,4 @@
+Contact: shishirjoshi65@gmail.com
+Expires: 2027-02-04T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://shishirjoshi.com/.well-known/security.txt

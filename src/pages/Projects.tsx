@@ -2,12 +2,38 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import { allProjects } from "../components/Work";
+import { useSeo } from "../hooks/use-seo";
 
 const ProjectsPage = () => {
   const navigate = useNavigate();
 
+  // SEO Hook
+  useSeo({
+    title: "Projects by Shishir Joshi - Design Portfolio & Creative Work",
+    description: "Explore all design projects by Shishir Joshi. Discover a collection of graphic design, UI/UX design, and creative work showcasing expertise in visual design and research.",
+    keywords: "Shishir Joshi, Projects, Portfolio, Graphic Design, UI/UX Design, Creative Work, Design Portfolio",
+    ogType: "website",
+    canonicalUrl: "https://shishirjoshi.com/projects",
+    ogImage: "https://shishirjoshi.com/og-image.png"
+  });
+
   return (
     <div className="min-h-screen bg-background pt-20 pb-24 px-6">
+      {/* JSON-LD Schema Markup - Projects Page */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Projects by Shishir Joshi",
+          "url": "https://shishirjoshi.com/projects",
+          "description": "Collection of design projects and creative work by Shishir Joshi",
+          "creator": {
+            "@type": "Person",
+            "name": "Shishir Joshi"
+          }
+        })}
+      </script>
+
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <button
