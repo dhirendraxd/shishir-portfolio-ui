@@ -18,7 +18,7 @@ const ProjectsPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background pt-20 pb-24 px-6">
+    <div className="min-h-screen bg-[#f6f6f7] pt-16 pb-24 px-6">
       {/* JSON-LD Schema Markup - Projects Page */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -34,31 +34,66 @@ const ProjectsPage = () => {
         })}
       </script>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors mb-16 group"
+          className="inline-flex items-center gap-1 text-foreground/70 hover:text-foreground transition-colors mb-10 text-sm"
         >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft className="w-4 h-4" />
           Back
         </button>
 
-        {/* Page Header */}
-        <div className="text-center mb-20">
-          <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">Portfolio</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground/90 mb-6">
-            All Projects
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-            Explore my complete collection of design projects, experiments, and creative work.
+        {/* Hero */}
+        <div className="text-center mb-14">
+          <p className="text-xs font-semibold tracking-[0.35em] text-foreground/40 uppercase mb-4">
+            Portfolio
           </p>
+          <h1 className="text-3xl md:text-5xl font-semibold text-foreground/90 mb-3">
+            Now you can do <span className="text-primary">everything</span>
+          </h1>
+          <p className="text-base md:text-lg text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+            Find, explore, and learn in one awesome place. Discover featured work and the full project collection.
+          </p>
+
+          {/* Search */}
+          <div className="mt-8 max-w-2xl mx-auto">
+            <div className="flex items-center gap-3 rounded-full bg-white shadow-sm border border-black/5 px-4 py-3">
+              <input
+                type="text"
+                placeholder="Search what ever you want"
+                className="flex-1 bg-transparent outline-none text-sm md:text-base text-foreground/80 placeholder:text-foreground/40"
+                aria-label="Search projects"
+              />
+              <div className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {allProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard
+              key={index}
+              {...project}
+              projects={allProjects}
+              startIndex={index}
+            />
           ))}
         </div>
       </div>

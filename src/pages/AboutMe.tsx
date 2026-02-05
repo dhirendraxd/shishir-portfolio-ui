@@ -179,7 +179,7 @@ const AboutMe = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">Experience</p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">Work History</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/70">Work History</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-12">
             {experience.map((job, index) => (
@@ -212,7 +212,7 @@ const AboutMe = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">Academic</p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">Education</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/70">Education</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-10">
             {education.map((edu, index) => (
@@ -254,7 +254,7 @@ const AboutMe = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">Expertise</p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">Skills & Capabilities</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/70">Skills & Tools</h2>
           </div>
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             {skills.map((skillGroup, index) => (
@@ -301,15 +301,15 @@ const AboutMe = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">Let's Connect</p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">Get In Touch</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/70">Get In Touch</h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-12">
             {SOCIAL_LINKS.map((social, index) => {
               const getIcon = () => {
-                if (social.label === "LinkedIn") return <Linkedin className="w-5 h-5" />;
-                if (social.label === "GitHub") return <Github className="w-5 h-5" />;
-                if (social.label === "Twitter") return <Twitter className="w-5 h-5" />;
-                if (social.label === "Email") return <Mail className="w-5 h-5" />;
+                if (social.label === "LinkedIn") return <Linkedin className="w-6 h-6 md:w-7 md:h-7" />;
+                if (social.label === "GitHub") return <Github className="w-6 h-6 md:w-7 md:h-7" />;
+                if (social.label === "Twitter") return <Twitter className="w-6 h-6 md:w-7 md:h-7" />;
+                if (social.label === "Email") return <Mail className="w-6 h-6 md:w-7 md:h-7" />;
                 return null;
               };
 
@@ -319,10 +319,14 @@ const AboutMe = () => {
                   href={social.href}
                   target={social.label !== "Email" ? "_blank" : undefined}
                   rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-2 px-5 py-3 border border-foreground/10 hover:border-[#FF8C42] text-foreground/70 hover:text-[#FF8C42] rounded-xl font-medium transition-all hover:shadow-md"
+                  className="group flex flex-col items-center text-foreground/70 hover:text-[#FF8C42] transition-colors"
                 >
-                  {getIcon()}
-                  {social.label}
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    {getIcon()}
+                  </div>
+                  <span className="text-xs font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {social.label}
+                  </span>
                 </a>
               );
             })}

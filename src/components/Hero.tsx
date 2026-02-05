@@ -42,7 +42,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-between px-8 md:px-16 lg:px-24 py-12 md:py-16 relative overflow-hidden bg-background">
+    <section className="min-h-screen flex flex-col items-center justify-between px-8 md:px-16 lg:px-24 py-6 md:py-8 relative overflow-hidden bg-background">
       {/* Location & Email - Top center with spacing */}
       <div className="w-full text-center space-y-1 -mt-4 mb-0">
         <p className="text-[9px] font-bold tracking-[0.35em] text-foreground uppercase cursor-pointer transition-colors duration-300 hover:text-accent" style={{ fontFamily: 'Inter, sans-serif' }}>Kathmandu, Nepal</p>
@@ -53,12 +53,12 @@ const Hero = () => {
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center flex-1">
         
         {/* Name - Very Large, Primary Focus - SINGLE LINE - BLACK COLOR */}
-        <h1 className="text-6xl md:text-6xl lg:text-8xl font-[900] tracking-tighter uppercase text-center leading-none mt-12 mb-14 md:mb-20 lg:mb-24 whitespace-nowrap" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
+        <h1 className="text-6xl md:text-6xl lg:text-8xl font-[900] tracking-tighter uppercase text-center leading-none -mt-16 mb-4 md:mb-6 lg:mb-8 whitespace-nowrap" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
           Shishir Joshi
         </h1>
         
         {/* Work samples - GENEROUS SPACING & SIZE - PRIMARY VISUAL */}
-        <div ref={containerRef} className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-4 mb-8 md:mb-10 lg:mb-12" style={{ height: '450px' }}>
+        <div ref={containerRef} className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-8 mb-2 md:mb-3 lg:mb-4" style={{ height: '450px' }}>
           {workSamples.map((sample, index) => (
             <div
               key={index}
@@ -86,14 +86,6 @@ const Hero = () => {
           <br />
           <span className="font-[800]" style={{ fontWeight: 800 }}>UI/UX & Researcher</span>
         </h2>
-      </div>
-
-      {/* Clients/Experience teaser - Scroll cue at bottom */}
-      <div className="w-full text-center pb-4 mt-16">
-        <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Clients</p>
-        <p className="text-[11px] tracking-wider leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', color: '#6B7280' }}>
-          ChimpVine
-        </p>
       </div>
     </section>
   );

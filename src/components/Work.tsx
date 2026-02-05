@@ -13,37 +13,68 @@ export const allProjects = [
     image: visual1,
     title: "Visual Design Exploration",
     description: "Creative visual design exploration",
-    category: "Design"
+    category: "Design",
+    details: "A visual exploration focused on composition, balance, and expressive typography with a modern editorial feel.",
+    tools: ["Figma", "Illustrator", "Photoshop"],
+    highlights: ["Built a flexible layout system", "Explored 3 distinct art directions"],
+    role: "UI Designer",
+    year: "2025"
   },
   {
     image: visual2,
     title: "Creative Composition",
     description: "Artistic composition and visual storytelling",
-    category: "Art Direction"
+    category: "Art Direction",
+    details: "A storytelling-driven composition exploring motion, form, and high-contrast color systems.",
+    tools: ["Illustrator", "After Effects"],
+    highlights: ["Defined a bold color palette", "Delivered 12+ visual frames"],
+    role: "Art Director",
+    year: "2024"
   },
   {
     image: visual3,
     title: "Design Study",
     description: "In-depth design study and experimentation",
-    category: "Design"
+    category: "Design",
+    details: "A focused study on layout hierarchy, grid systems, and rhythm for digital product interfaces.",
+    tools: ["Figma", "Notion"],
+    highlights: ["Created 6 layout variants", "Validated spacing scales"],
+    role: "Product Designer",
+    year: "2024"
   },
   {
     image: visual4,
     title: "Digital Design",
     description: "Modern digital design composition",
-    category: "Digital Design"
+    category: "Digital Design",
+    details: "A modern digital layout concept with a focus on clean UI, soft shadows, and intuitive content flow.",
+    tools: ["Figma", "Photoshop"],
+    highlights: ["Optimized layout for readability", "Defined component library"],
+    role: "UI Designer",
+    year: "2025"
   },
   {
     image: visual5,
     title: "Creative Concept",
     description: "Creative concept and visual exploration",
-    category: "Concept Art"
+    category: "Concept Art",
+    details: "Concept exploration for a themed visual campaign with dynamic imagery and texture.",
+    tools: ["Illustrator", "Photoshop"],
+    highlights: ["Drafted 20+ sketch iterations", "Finalized hero art"],
+    role: "Visual Designer",
+    year: "2023"
   },
   {
     image: project4,
     title: "Project Four",
     description: "Professional project work",
-    category: "Project"
+    category: "Project",
+    details: "Client project focused on brand identity and visual system for a modern product launch.",
+    tools: ["Figma", "Illustrator", "Miro"],
+    highlights: ["Delivered brand guidelines", "Designed landing page system"],
+    role: "Brand Designer",
+    year: "2023",
+    link: "https://example.com"
   }
 ];
 
@@ -59,7 +90,7 @@ const Work = () => {
           <p className="text-sm font-medium tracking-widest text-accent-foreground uppercase mb-4">
             Selected Work
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             Projects & Experiments
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
@@ -71,7 +102,13 @@ const Work = () => {
         {/* Projects grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard
+              key={index}
+              {...project}
+              variant="minimal"
+              projects={projects}
+              startIndex={index}
+            />
           ))}
         </div>
 

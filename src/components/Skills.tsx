@@ -62,10 +62,10 @@ const Skills = () => {
         {/* Section header */}
         <div className="mb-16 text-center">
           <p className="text-xs font-medium tracking-[0.35em] text-foreground/40 uppercase mb-3">
-            Capabilities
+            Skills
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground/70">
-            Tools & Technologies
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground/70">
+            Tools
           </h2>
         </div>
 

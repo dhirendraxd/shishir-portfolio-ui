@@ -20,8 +20,8 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <Hero />
       <Skills />
-      <About />
       <Work />
+      <About />
       <Education />
       <Contact />
     </main>

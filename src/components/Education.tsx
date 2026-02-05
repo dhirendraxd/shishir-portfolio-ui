@@ -9,12 +9,12 @@ const Education = () => {
           <p className="text-xs font-bold tracking-[0.35em] text-foreground/60 uppercase mb-3">
             Connect
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             Social
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-12">
           {SOCIAL_LINKS.map((social, index) => {
             const getIcon = () => {
               if (social.label === "LinkedIn") return {
@@ -44,29 +44,21 @@ const Education = () => {
                 href={social.href}
                 target={social.label !== "Email" ? "_blank" : undefined}
                 rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="relative group"
+                className="relative group flex flex-col items-center"
               >
-                <div 
-                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
+                <img 
+                  src={icon.url} 
+                  alt={social.label} 
+                  className="w-8 h-8 md:w-10 md:h-10 transition-all duration-300 group-hover:scale-125"
                   style={{ 
-                    backgroundColor: icon.color + '15',
-                    padding: '1.25rem'
+                    filter: `brightness(0) saturate(100%)`,
+                    WebkitMaskImage: `url(${icon.url})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskSize: 'contain',
+                    backgroundColor: icon.color
                   }}
-                >
-                  <img 
-                    src={icon.url} 
-                    alt={social.label} 
-                    className="w-full h-full object-contain"
-                    style={{ 
-                      filter: `brightness(0) saturate(100%)`,
-                      WebkitMaskImage: `url(${icon.url})`,
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskSize: 'contain',
-                      backgroundColor: icon.color
-                    }}
-                  />
-                </div>
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm font-medium text-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                />
+                <span className="text-xs font-medium text-foreground/70 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   {social.label}
                 </span>
               </a>
