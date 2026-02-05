@@ -53,12 +53,12 @@ const Hero = () => {
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center flex-1">
         
         {/* Name - Very Large, Primary Focus - SINGLE LINE - BLACK COLOR */}
-        <h1 className="text-6xl md:text-6xl lg:text-8xl font-[900] tracking-tighter uppercase text-center leading-none -mt-16 mb-4 md:mb-6 lg:mb-8 whitespace-nowrap" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
+        <h1 className="text-6xl md:text-6xl lg:text-8xl font-[900] tracking-tighter uppercase text-center leading-none mt-4 mb-8 md:mb-12 lg:mb-16 whitespace-nowrap" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em', color: '#000000' }}>
           Shishir Joshi
         </h1>
         
         {/* Work samples - GENEROUS SPACING & SIZE - PRIMARY VISUAL */}
-        <div ref={containerRef} className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-8 mb-2 md:mb-3 lg:mb-4" style={{ height: '450px' }}>
+        <div ref={containerRef} className="relative flex items-center justify-center w-full max-w-6xl group/container -mt-2 mb-8 md:mb-12 lg:mb-16" style={{ height: '450px' }}>
           {workSamples.map((sample, index) => (
             <div
               key={index}
@@ -81,11 +81,19 @@ const Hero = () => {
         </div>
 
         {/* Professional Titles - Very large, light gray, prominent - THICK FONT */}
-        <h2 className="text-5xl md:text-6xl lg:text-8xl font-[700] text-foreground/25 tracking-wide uppercase text-center leading-tight -mt-16" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+        <h2 className="text-5xl md:text-6xl lg:text-8xl font-[700] text-foreground/25 tracking-wide uppercase text-center leading-tight -mt-24" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
           Graphic Designer,
           <br />
           <span className="font-[800]" style={{ fontWeight: 800 }}>UI/UX & Researcher</span>
         </h2>
+      </div>
+
+      {/* Clients/Experience teaser - Scroll cue at bottom */}
+      <div className="w-full text-center pb-4 mt-16">
+        <p className="text-xs font-bold tracking-[0.25em] text-foreground uppercase mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Clients</p>
+        <p className="text-[11px] tracking-wider leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', color: '#6B7280' }}>
+          ChimpVine
+        </p>
       </div>
     </section>
   );

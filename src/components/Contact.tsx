@@ -96,7 +96,6 @@ const Contact = () => {
                       : "border-foreground/20 focus:border-accent"
                   }`}
                 />
-                {errors.name && touched.name && <p className="text-red-500 text-xs mt-1" role="alert">{errors.name}</p>}
               </div>
 
               <div>
@@ -116,7 +115,6 @@ const Contact = () => {
                       : "border-foreground/20 focus:border-accent"
                   }`}
                 />
-                {errors.email && touched.email && <p className="text-red-500 text-xs mt-1" role="alert">{errors.email}</p>}
               </div>
 
               <div>
@@ -136,7 +134,6 @@ const Contact = () => {
                       : "border-foreground/20 focus:border-accent"
                   }`}
                 />
-                {errors.message && touched.message && <p className="text-red-500 text-xs mt-1" role="alert">{errors.message}</p>}
               </div>
 
               <button
@@ -150,7 +147,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <p className="mt-20 text-center text-sm text-muted-foreground">
+        <p className="mt-12 mb-0 text-center text-xs text-muted-foreground">
           Made by <a href="https://dhirendrasinghdhami.com.np/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Dhiren</a> at <a href="https://www.ctrlbits.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Ctrl Bits</a>
         </p>
       </div>
