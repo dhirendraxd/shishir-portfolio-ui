@@ -19,20 +19,20 @@ export const NAV_ITEMS = [
 // Social links
 export const SOCIAL_LINKS = [
   {
-    label: "Email",
-    href: "mailto:hello@shishirjoshi.com",
-  },
-  {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/shishir-joshi",
+    href: "https://www.linkedin.com/in/shishir-joshi-5948aa276/",
   },
   {
     label: "GitHub",
-    href: "https://github.com/shishir-joshi",
+    href: "https://github.com/Shishirjoshi",
   },
   {
     label: "Twitter",
-    href: "https://twitter.com/shishir_joshi",
+    href: "https://x.com/shishirjoshi65",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/shishir.joshi.65/",
   },
 ] as const;
 
@@ -47,6 +47,6 @@ export const FORM_CONSTRAINTS = {
 
 // Contact info
 export const CONTACT_INFO = {
-  EMAIL: "hello@shishirjoshi.com",
+  EMAIL: "shishirjoshi65@gmail.com",
   LOCATION: "Kathmandu, Nepal",
 } as const;

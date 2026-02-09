@@ -1,6 +1,20 @@
 import { SOCIAL_LINKS } from "../lib/constants";
+import linkedinIcon from "@/assets/socials/linkedin (1).png";
+import githubIcon from "@/assets/socials/github.png";
+import twitterIcon from "@/assets/socials/twitter (1).png";
+import instagramIcon from "@/assets/socials/instagram.png";
 
 const Education = () => {
+  const getSocialIcon = (label: string) => {
+    const iconMap: Record<string, string> = {
+      "LinkedIn": linkedinIcon,
+      "GitHub": githubIcon,
+      "Twitter": twitterIcon,
+      "Instagram": instagramIcon,
+    };
+    return iconMap[label] || githubIcon;
+  };
+
   return (
     <section id="education" className="py-24 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
@@ -16,27 +30,7 @@ const Education = () => {
 
         <div className="flex flex-wrap justify-center gap-12">
           {SOCIAL_LINKS.map((social, index) => {
-            const getIcon = () => {
-              if (social.label === "LinkedIn") return {
-                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg",
-                color: "#0A66C2"
-              };
-              if (social.label === "GitHub") return {
-                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg",
-                color: "#181717"
-              };
-              if (social.label === "Twitter") return {
-                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg",
-                color: "#000000"
-              };
-              if (social.label === "Email") return {
-                url: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg",
-                color: "#EA4335"
-              };
-              return null;
-            };
-
-            const icon = getIcon();
+            const iconSrc = getSocialIcon(social.label);
 
             return (
               <a
@@ -47,16 +41,10 @@ const Education = () => {
                 className="relative group flex flex-col items-center"
               >
                 <img 
-                  src={icon.url} 
+                  src={iconSrc}
                   alt={social.label} 
-                  className="w-8 h-8 md:w-10 md:h-10 transition-all duration-300 group-hover:scale-125"
-                  style={{ 
-                    filter: `brightness(0) saturate(100%)`,
-                    WebkitMaskImage: `url(${icon.url})`,
-                    WebkitMaskRepeat: 'no-repeat',
-                    WebkitMaskSize: 'contain',
-                    backgroundColor: icon.color
-                  }}
+                  loading="lazy"
+                  className="w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-125"
                 />
                 <span className="text-xs font-medium text-foreground/70 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   {social.label}

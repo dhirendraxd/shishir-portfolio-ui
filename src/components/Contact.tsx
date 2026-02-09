@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-6 bg-background">
+    <section id="contact" className="py-16 px-6 bg-background pb-0">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[1.05fr_1.3fr] rounded-3xl overflow-hidden bg-white shadow-2xl">
           {/* Left visual panel */}
@@ -64,6 +64,9 @@ const Contact = () => {
             </div>
             <div className="relative z-10">
               <p className="text-white/70 text-sm">Let's build something clean and impressive.</p>
+              <a href="mailto:shishirjoshi65@gmail.com" className="text-white/80 text-sm hover:text-white transition-colors mt-4 block">
+                shishirjoshi65@gmail.com
+              </a>
             </div>
           </div>
 
@@ -147,7 +150,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <p className="mt-12 mb-0 text-center text-xs text-muted-foreground">
+        <p className="mt-12 mb-8 text-center text-xs text-muted-foreground">
           Made by <a href="https://dhirendrasinghdhami.com.np/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Dhiren</a> at <a href="https://www.ctrlbits.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Ctrl Bits</a>
         </p>
       </div>
